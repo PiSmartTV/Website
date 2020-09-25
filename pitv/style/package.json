@@ -2,14 +2,12 @@
   "name": "pitv",
   "version": "1.0.0",
   "description": "Website for PiTV organization",
-  "main": " ",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "Aleksa Ognjanovic",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "bootstrap-icons": "^1.0.0"
+    "bootstrap-icons": "^1.0.0",
+    "jquery": "^3.5.1"
   }
 }

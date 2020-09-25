@@ -139,3 +139,9 @@ cython_debug/
 
 # Nodejs stuff
 node_modules
+
+# Sass cache
+.sass-cache
+
+pitv/main/static/css/*
+pitv/main/static/js/*

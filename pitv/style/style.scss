@@ -1,0 +1,11 @@
+$gray-800: #343a40;
+
+$theme-colors:(
+  "primary":#bd1143
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+    padding-top: 3rem;
+}
