@@ -4,6 +4,8 @@ $theme-colors:(
   "primary":#bd1143
 );
 
+$font-family-sans-serif: "Dosis", sans-serif;
+
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
