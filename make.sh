@@ -10,9 +10,9 @@ SCSS_DIR="${DIR}/pitv/style/style.scss"
 JQUERY_JS="${DIR}/pitv/style/node_modules/jquery/dist/jquery.min.js"
 BOOTSTRAP_JS="${DIR}/pitv/style/node_modules/bootstrap/dist/js/bootstrap.min.js"
 
-mkdir ${CSS_DIR}
-mkdir ${JS_DIR}
-mkdir ${IMG_DIR}
+mkdir -p ${CSS_DIR}
+mkdir -p ${JS_DIR}
+mkdir -p ${IMG_DIR}
 
 npm --prefix "${DIR}/pitv/style/" ci --save
 
