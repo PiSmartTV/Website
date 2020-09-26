@@ -1,3 +1,5 @@
+{% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
 	<meta name="keywords" content="PiTV, Smart, TV, Raspberry">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	{% load static %}
+
 	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
 	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
 
@@ -36,16 +38,16 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
+					<a class="nav-link" href="#features">{% trans 'Features' %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Download</a>
+					<a class="nav-link" href="#">{% trans 'Download' %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Donate</a>
+					<a class="nav-link" href="#">{% trans 'Donate' %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Sign up</a>
+					<a class="nav-link" href="#">{% trans 'Sign up' %}</a>
 				</li>
 			</ul>
 		</div>

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from os import environ
+from os import environ, path
 
 from django.core.management.utils import get_random_secret_key
 

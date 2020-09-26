@@ -9,6 +9,10 @@ $font-family-sans-serif: "Dosis", sans-serif;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 3.5rem;
 }
