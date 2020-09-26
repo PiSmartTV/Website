@@ -50,14 +50,16 @@
 		</div>
 	</nav>
 
+	{% block content %}
+	{% endblock %}
 
 	<!-- Copyright -->
+	<!-- TODO: Write more footer-->
 	<div class="footer-copyright text-center py-3 bg-secondary text-light">© 2020 Copyright:
 		<a href="{% url 'pitv-home' %}">pitv.cf</a>
 	</div>
 
-	{% block content %}
-	{% endblock %}
+	
 
 	<!-- JavaScript required for bootstrap -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
