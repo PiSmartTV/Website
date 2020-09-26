@@ -1,7 +1,8 @@
 $gray-800: #343a40;
 
 $theme-colors:(
-  "primary":#bd1143
+  "primary":#bd1143,
+  "secondary": #6cc04a
 );
 
 $font-family-sans-serif: "Dosis", sans-serif;
@@ -9,5 +10,10 @@ $font-family-sans-serif: "Dosis", sans-serif;
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
-    padding-top: 3rem;
+  padding-top: 3.5rem;
+}
+
+.navbar-toggler{
+  outline: none !important;
+  border: none !important;
 }
