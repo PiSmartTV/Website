@@ -11,7 +11,7 @@
 
 	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
-	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis"/> 
+	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
 
 	{% if title %}
 	<title>PiTV - {{ title }}</title>
@@ -27,8 +27,9 @@
 		<a class="navbar-brand" href="{% url 'pitv-home' %}">
 			<img src="{% static 'images/logo.png' %}" width="80" class="d-inline-block align-text-top" alt="">
 		</a>
-		
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -55,11 +56,11 @@
 
 	<!-- Copyright -->
 	<!-- TODO: Write more footer-->
-	<div class="footer-copyright text-center py-3 bg-secondary text-light">© 2020 Copyright:
+	<div class="footer-copyright text-center py-3 mt-3 bg-secondary text-light">© 2020 Copyright:
 		<a href="{% url 'pitv-home' %}">pitv.cf</a>
 	</div>
 
-	
+
 
 	<!-- JavaScript required for bootstrap -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
