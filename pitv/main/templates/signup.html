@@ -1,0 +1,54 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="description" content="PiTV - Smart TV solution for Raspberry Pi">
+	<meta name="author" content="Aleksa Ognjanovic">
+	<meta name="keywords" content="PiTV, Smart, TV, Raspberry">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
+
+	{% if title %}
+	<title>PiTV - {{ title }}</title>
+	{% else %}
+	<title>PiTV</title>
+	{% endif %}
+
+</head>
+
+<body class="text-center">
+
+    <form class="form-signin">
+        <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="100" height="100">
+        <h3 class="h3 mb-3 font-weight-normal">{% trans 'Sign up' %}</h3>
+
+        <label for="inputFN" class="sr-only">{% trans 'Full Name'%}</label>
+        <input type="text" id="inputFN" class="form-control" placeholder="{% trans 'Full Name'%}" required="" autofocus="">
+
+        <label for="inputUsername" class="sr-only">{% trans 'Username'%}</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="{% trans 'Username'%}" required="">
+
+        <label for="inputEmail" class="sr-only">{% trans 'E-Mail Address'%}</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="{% trans 'E-Mail Address'%}" required="">
+
+        <label for="inputPassword" class="sr-only">{% trans 'Password' %}</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="{% trans 'Password' %}" required="">
+        
+        <label for="inputCP" class="sr-only">{% trans 'Confirm Password' %}</label>
+        <input type="password" id="inputCP" class="form-control" placeholder="{% trans 'Confirm Password' %}" required="">
+
+    </form>
+
+
+	<!-- JavaScript required for bootstrap -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
