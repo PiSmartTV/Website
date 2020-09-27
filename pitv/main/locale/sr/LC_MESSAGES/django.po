@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-26 20:58+0000\n"
+"POT-Creation-Date: 2020-09-27 18:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,35 +19,60 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: main/templates/base.html:40
+#: main/forms.py:7 main/templates/signup.html:52
+msgid "E-Mail Address"
+msgstr "Е-Мејл адреса"
+
+#: main/forms.py:11 main/templates/signup.html:34
+msgid "First Name"
+msgstr "Име"
+
+#: main/forms.py:14 main/templates/signup.html:38
+msgid "Last Name"
+msgstr "Презиме"
+
+#: main/forms.py:20 main/templates/signup.html:59
+msgid "Password"
+msgstr "Лозинка"
+
+#: main/forms.py:21 main/templates/signup.html:67
+msgid "Confirm Password"
+msgstr "Потврда Лозинке"
+
+#: main/forms.py:30 main/templates/signup.html:45
+msgid "Username"
+msgstr "Корисничко Име"
+
+#: main/templates/base.html:41
 msgid "Features"
 msgstr "Карактеристике"
 
-#: main/templates/base.html:43
+#: main/templates/base.html:44
 msgid "Download"
 msgstr "Преузми"
 
-#: main/templates/base.html:46
+#: main/templates/base.html:47
 msgid "Donate"
 msgstr "Донирај"
 
-#: main/templates/base.html:49
+#: main/templates/base.html:50 main/templates/signup.html:30
+#: main/templates/signup.html:72
 msgid "Sign up"
 msgstr "Пријави се"
 
-#: main/templates/home.html:9
+#: main/templates/home.html:10
 msgid "Beautiful UI"
 msgstr "Леп изглед"
 
-#: main/templates/home.html:10 main/templates/home.html:24
-#: main/templates/home.html:30
+#: main/templates/home.html:11 main/templates/home.html:25
+#: main/templates/home.html:31
 msgid "TODO: Description I am going to write."
 msgstr "Урадити: Опис који ћу да напишем"
 
-#: main/templates/home.html:23
+#: main/templates/home.html:24
 msgid "User-friendly"
 msgstr "Лако за коришћење"
 
-#: main/templates/home.html:29
+#: main/templates/home.html:30
 msgid "Open source"
 msgstr "Отвореног кода"

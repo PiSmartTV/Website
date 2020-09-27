@@ -4,51 +4,78 @@
 <html lang="en">
 
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="description" content="PiTV - Smart TV solution for Raspberry Pi">
-	<meta name="author" content="Aleksa Ognjanovic">
-	<meta name="keywords" content="PiTV, Smart, TV, Raspberry">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="PiTV - Smart TV solution for Raspberry Pi">
+    <meta name="author" content="Aleksa Ognjanovic">
+    <meta name="keywords" content="PiTV, Smart, TV, Raspberry">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
-	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+    <link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
 
-	{% if title %}
-	<title>PiTV - {{ title }}</title>
-	{% else %}
-	<title>PiTV</title>
-	{% endif %}
+    {% if title %}
+    <title>PiTV - {{ title }}</title>
+    {% else %}
+    <title>PiTV</title>
+    {% endif %}
 
 </head>
 
 <body class="text-center">
 
-    <form class="form-signin">
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
         <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="100" height="100">
         <h3 class="h3 mb-3 font-weight-normal">{% trans 'Sign up' %}</h3>
 
-        <label for="inputFN" class="sr-only">{% trans 'Full Name'%}</label>
-        <input type="text" id="inputFN" class="form-control" placeholder="{% trans 'Full Name'%}" required="" autofocus="">
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.first_name.auto_id }}" class="sr-only">{% trans 'First Name'%}</label>
+                {{ form.first_name }}
+            </div>
+            <div class="col-md">
+                <label for="{{ form.last_name.auto_id }}" class="sr-only">{% trans 'Last Name'%}</label>
+                {{ form.last_name }}
+            </div>
+        </div>
 
-        <label for="inputUsername" class="sr-only">{% trans 'Username'%}</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="{% trans 'Username'%}" required="">
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
+                {{ form.username }}
+            </div>
+        </div>
 
-        <label for="inputEmail" class="sr-only">{% trans 'E-Mail Address'%}</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="{% trans 'E-Mail Address'%}" required="">
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.email.auto_id }}" class="sr-only">{% trans 'E-Mail Address'%}</label>
+                {{ form.email}}
+            </div>
+        </div>
 
-        <label for="inputPassword" class="sr-only">{% trans 'Password' %}</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="{% trans 'Password' %}" required="">
-        
-        <label for="inputCP" class="sr-only">{% trans 'Confirm Password' %}</label>
-        <input type="password" id="inputCP" class="form-control" placeholder="{% trans 'Confirm Password' %}" required="">
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.password1.auto_id }}" class="sr-only">{% trans 'Password' %}</label>
+                {{ form.password1 }}
+            </div>
 
+        </div>
+
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.password2.auto_id }}" class="sr-only">{% trans 'Confirm Password' %}</label>
+                {{ form.password2 }}
+            </div>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
     </form>
 
 
-	<!-- JavaScript required for bootstrap -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- JavaScript required for bootstrap -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
