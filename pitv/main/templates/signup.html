@@ -72,7 +72,7 @@
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
-        <p class="text-muted">
+        <p class="small text-muted">
             {% trans 'Already have an account?' %}
             <a href="#">{% trans 'Sign in'%}</a>
             {% trans 'now!' %}
@@ -80,7 +80,7 @@
     </form>
 
 
-    <p class="text-muted mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">pitv.cf</a></p>
+    <p class="text-muted small mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">pitv.cf</a></p>
     <!-- JavaScript required for bootstrap -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
