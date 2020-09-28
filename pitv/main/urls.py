@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='pitv-home'),
-    path('signup/', views.signup, name='pitv-signup')
+    path('signup/', views.signup, name='pitv-signup'),
+    path('not-available/', views.not_available, name='pitv-not-available')
 ]

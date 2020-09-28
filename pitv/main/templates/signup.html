@@ -22,12 +22,21 @@
 
 </head>
 
-<body class="text-center">
+<body class="text-center d-flex flex-column min-vh-100">
 
     <form class="form-signin" method="POST">
         {% csrf_token %}
-        <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="100" height="100">
+        <a href="{% url 'pitv-home' %}">
+            <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="100" height="100">
+        </a>
         <h3 class="h3 mb-3 font-weight-normal">{% trans 'Sign up' %}</h3>
+
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
+                {{ form.username }}
+            </div>
+        </div>
 
         <div class="form-row my-2">
             <div class="col-md">
@@ -42,15 +51,8 @@
 
         <div class="form-row my-2">
             <div class="col-md">
-                <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
-                {{ form.username }}
-            </div>
-        </div>
-
-        <div class="form-row my-2">
-            <div class="col-md">
                 <label for="{{ form.email.auto_id }}" class="sr-only">{% trans 'E-Mail Address'%}</label>
-                {{ form.email}}
+                {{ form.email }}
             </div>
         </div>
 
@@ -64,15 +66,21 @@
 
         <div class="form-row my-2">
             <div class="col-md">
-                <label for="{{ form.password2.auto_id }}" class="sr-only">{% trans 'Confirm Password' %}</label>
+                <label for="{{ form.password2.auto_id }}" class="sr-only">{% trans 'Confirm password' %}</label>
                 {{ form.password2 }}
             </div>
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
+        <p class="text-muted">
+            {% trans 'Already have an account?' %}
+            <a href="#">{% trans 'Sign in'%}</a>
+            {% trans 'now!' %}
+        </p>
     </form>
 
 
+    <p class="text-muted mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">pitv.cf</a></p>
     <!-- JavaScript required for bootstrap -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

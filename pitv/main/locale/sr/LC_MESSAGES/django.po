@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-27 18:49+0200\n"
+"POT-Creation-Date: 2020-09-27 23:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,60 +19,93 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: main/forms.py:7 main/templates/signup.html:52
+#: main/forms.py:7 main/templates/signup.html:54
 msgid "E-Mail Address"
 msgstr "Е-Мејл адреса"
 
-#: main/forms.py:11 main/templates/signup.html:34
+#: main/forms.py:11 main/templates/signup.html:43
 msgid "First Name"
 msgstr "Име"
 
-#: main/forms.py:14 main/templates/signup.html:38
+#: main/forms.py:14 main/templates/signup.html:47
 msgid "Last Name"
 msgstr "Презиме"
 
-#: main/forms.py:20 main/templates/signup.html:59
+#: main/forms.py:20 main/templates/signup.html:61
 msgid "Password"
 msgstr "Лозинка"
 
-#: main/forms.py:21 main/templates/signup.html:67
-msgid "Confirm Password"
-msgstr "Потврда Лозинке"
+#: main/forms.py:21 main/templates/signup.html:69
+msgid "Confirm password"
+msgstr "Потврда лозинке"
 
-#: main/forms.py:30 main/templates/signup.html:45
+#: main/forms.py:22 main/templates/signup.html:36
 msgid "Username"
-msgstr "Корисничко Име"
+msgstr "Корисничко име"
 
-#: main/templates/base.html:41
+#: main/templates/base.html:42
 msgid "Features"
 msgstr "Карактеристике"
 
-#: main/templates/base.html:44
+#: main/templates/base.html:45
 msgid "Download"
 msgstr "Преузми"
 
-#: main/templates/base.html:47
+#: main/templates/base.html:48
 msgid "Donate"
 msgstr "Донирај"
 
-#: main/templates/base.html:50 main/templates/signup.html:30
-#: main/templates/signup.html:72
+#: main/templates/base.html:51 main/templates/signup.html:32
+#: main/templates/signup.html:74 main/views.py:26
 msgid "Sign up"
 msgstr "Пријави се"
 
 #: main/templates/home.html:10
+msgid ""
+"Smart TV solution for Raspberry Pi with focus on user-friendly interface"
+msgstr "Паметан ТВ за Распбери Пај са фокусом на лакоћи коришћења"
+
+#: main/templates/home.html:17
 msgid "Beautiful UI"
 msgstr "Леп изглед"
 
-#: main/templates/home.html:11 main/templates/home.html:25
-#: main/templates/home.html:31
+#: main/templates/home.html:18 main/templates/home.html:33
+#: main/templates/home.html:40
 msgid "TODO: Description I am going to write."
 msgstr "Урадити: Опис који ћу да напишем"
 
-#: main/templates/home.html:24
+#: main/templates/home.html:32
 msgid "User-friendly"
 msgstr "Лако за коришћење"
 
-#: main/templates/home.html:30
+#: main/templates/home.html:39
 msgid "Open source"
 msgstr "Отвореног кода"
+
+#: main/templates/not-available.html:7
+msgid "This is not yet available."
+msgstr "Страница није још доступна."
+
+#: main/templates/not-available.html:8
+msgid "Come back tomorrow to check for updates"
+msgstr "Проверите сутра за промене"
+
+#: main/templates/signup.html:76
+msgid "Already have an account?"
+msgstr "Већ имате налог?"
+
+#: main/templates/signup.html:77
+msgid "Sign in"
+msgstr "Пријави се"
+
+#: main/templates/signup.html:78
+msgid "now!"
+msgstr "сада!"
+
+#: main/views.py:9
+msgid "Home"
+msgstr "Почетна"
+
+#: main/views.py:12
+msgid "Whoops"
+msgstr "Упс"

@@ -13,8 +13,17 @@ html{
   scroll-behavior: smooth;
 }
 
-body {
+#with-nav {
   padding-top: 3.5rem;
+}
+
+#landing{
+  background-image: url("https://via.placeholder.com/1920x768");
+  height: 71vh;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .form-signin {

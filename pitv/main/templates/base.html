@@ -23,8 +23,9 @@
 
 </head>
 
-<body>
+<body id="with-nav" class="d-flex flex-column min-vh-100">
 	<!-- Navbar -->
+	
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 		<a class="navbar-brand" href="{% url 'pitv-home' %}">
 			<img src="{% static 'images/logo.png' %}" width="80" class="d-inline-block align-text-top" alt="">
@@ -38,13 +39,13 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#features">{% trans 'Features' %}</a>
+					<a class="nav-link" href="{% url 'pitv-home'%}#features">{% trans 'Features' %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">{% trans 'Download' %}</a>
+					<a class="nav-link" href="https://github.com/PiSmartTV/PiTV/releases">{% trans 'Download' %}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">{% trans 'Donate' %}</a>
+					<a class="nav-link" href="{% url 'pitv-not-available' %}">{% trans 'Donate' %}</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'pitv-signup' %}">{% trans 'Sign up' %}</a>
@@ -58,7 +59,8 @@
 
 	<!-- Copyright -->
 	<!-- TODO: Write more footer-->
-	<div class="footer-copyright text-center py-3 mt-3 bg-secondary text-light">© 2020 Copyright:
+	<div class="mt-3"></div>
+	<div class="footer-copyright mt-auto text-center py-3 bg-secondary text-light">© 2020 Copyright:
 		<a href="{% url 'pitv-home' %}">pitv.cf</a>
 	</div>
 

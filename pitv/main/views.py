@@ -6,7 +6,10 @@ from django.utils.translation import gettext as _
 from .forms import CustomUserCreationForm
 
 def home(request):
-    return render(request, 'home.html', {'title': 'Home'})
+    return render(request, 'home.html', {'title': _('Home')})
+
+def not_available(request):
+    return render(request, 'not-available.html', {'title': _('Whoops')})
 
 def signup(request):
     if request.method == 'POST':
