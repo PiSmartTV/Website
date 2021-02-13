@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
-    <link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet"> 
 
     {% if title %}
     <title>PiTV - {{ title }}</title>
@@ -74,13 +74,13 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
         <p class="small text-muted">
             {% trans 'Already have an account?' %}
-            <a href="#">{% trans 'Sign in'%}</a>
+            <a href="{% url 'pitv-login' %}">{% trans 'Sign in'%}</a>
             {% trans 'now!' %}
         </p>
     </form>
 
 
-    <p class="text-muted small mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">pitv.cf</a></p>
+    <p class="text-muted small mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">{{ request.get_host }}</a></p>
     <!-- JavaScript required for bootstrap -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

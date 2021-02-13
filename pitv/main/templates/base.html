@@ -13,7 +13,7 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
-	<link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
+	<link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet"> 
 	<!-- <link rel="stylesheet" href="https://fontlibrary.org/face/blogger-sans" />  -->
 
 	{% if title %}
@@ -62,7 +62,7 @@
 	<!-- TODO: Write more footer-->
 	<div class="mt-3"></div>
 	<div class="footer-copyright mt-auto text-center py-3 bg-secondary text-light">© 2020 Copyright:
-		<a href="{% url 'pitv-home' %}">pitv.cf</a>
+		<a href="{% url 'pitv-home' %}">{{ request.get_host }}</a>
 	</div>
 
 

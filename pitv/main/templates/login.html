@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
-    <link rel="stylesheet" href="https://fontlibrary.org/face/dosis" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet"> 
 
     {% if title %}
     <title>PiTV - {{ title }}</title>
@@ -26,14 +26,35 @@
 
     <form class="form-signin" method="POST">
         {% csrf_token %}
-        {{ form.username }}
-        {{ form.password }}
+
+        <a href="{% url 'pitv-home' %}">
+            <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="100" height="100">
+        </a>
+        <h3 class="h3 mb-3 font-weight-normal">{% trans 'Log in' %}</h3>
+
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
+                {{ form.username }}
+            </div>
+        </div>
+
+        <div class="form-row my-2">
+            <div class="col-md">
+                <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
+                {{ form.password }}
+            </div>
+        </div>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Log in' %}</button>
-        
+        <p class="small text-muted">
+            {% trans 'Need an account?' %}
+            <a href="{% url 'pitv-signup' %}">{% trans 'Sign up'%}</a>
+            {% trans 'now!' %}
+        </p>
     </form>
 
-
-    <p class="text-muted small mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">pitv.cf</a></p>
+    <p class="text-muted small mb-1">© 2020 Copyright: <a href="{% url 'pitv-home' %}">{{ request.get_host }}</a></p>
     <!-- JavaScript required for bootstrap -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
