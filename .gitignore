@@ -145,3 +145,4 @@ node_modules
 
 pitv/main/static/css/*
 pitv/main/static/js/*
+pitv/main/static/images/favicon.ico
