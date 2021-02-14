@@ -4,6 +4,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from . import views
+from . import api
 
 favicon_path = staticfiles_storage.url('images/favicon.ico')
 favicon_view = RedirectView.as_view(url=favicon_path, permanent=True)
@@ -17,6 +18,9 @@ urlpatterns = [
     path('signup/', views.signup, name='pitv-signup'),
     path('login/', views.signin, name='pitv-login'),
     path('logout/', auth_views.LogoutView.as_view(), name='pitv-logout'),
+
+    # API
+    path('api/code/', api.code, name='pitv-api-code'),
 
     # Account
     path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower())),
