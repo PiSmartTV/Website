@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-14 13:39+0100\n"
+"POT-Creation-Date: 2021-02-14 20:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,25 @@ msgstr "Потврда лозинке"
 msgid "Username"
 msgstr "Корисничко име"
 
+#: main/templates/account/devices.html:8
+#, fuzzy
+#| msgid "Devices"
+msgid "Device list"
+msgstr "Уређаји"
+
+#: main/templates/account/devices.html:27
+msgid "Register new device"
+msgstr ""
+
+#: main/templates/account/devices.html:32
+#: main/templates/account/devices.html:34
+msgid "Code"
+msgstr ""
+
+#: main/templates/account/devices.html:37
+msgid "Submit"
+msgstr ""
+
 #: main/templates/base.html:43
 msgid "Features"
 msgstr "Карактеристике"
@@ -57,11 +76,11 @@ msgid "Donate"
 msgstr "Донирај"
 
 #: main/templates/base.html:54
-msgid "Logout"
-msgstr "Излогуј се"
+msgid "Account"
+msgstr "Налог"
 
 #: main/templates/base.html:56 main/templates/login.html:52
-#: main/templates/signup.html:32 main/templates/signup.html:74 main/views.py:51
+#: main/templates/signup.html:32 main/templates/signup.html:74 main/views.py:59
 msgid "Sign up"
 msgstr "Пријави се"
 
@@ -99,7 +118,7 @@ msgid ""
 "issues."
 msgstr ""
 
-#: main/templates/login.html:33 main/templates/login.html:49 main/views.py:77
+#: main/templates/login.html:33 main/templates/login.html:49 main/views.py:84
 msgid "Log in"
 msgstr "Пријави се"
 
@@ -129,14 +148,28 @@ msgstr "Већ имате налог?"
 msgid "Sign in"
 msgstr "Пријави се"
 
-#: main/views.py:12 main/views.py:26
+#: main/views.py:11 main/views.py:29
 msgid "Devices"
 msgstr "Уређаји"
 
-#: main/views.py:16
+#: main/views.py:11
+msgid "Logout"
+msgstr "Излогуј се"
+
+#: main/views.py:15
 msgid "Home"
 msgstr "Почетна"
 
-#: main/views.py:20
+#: main/views.py:19
 msgid "Whoops"
 msgstr "Упс"
+
+#: main/views.py:53
+#, python-brace-format
+msgid "Account created for {username}!"
+msgstr ""
+
+#: main/views.py:72
+#, python-brace-format
+msgid "Successfully logged in as {username}!"
+msgstr ""

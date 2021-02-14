@@ -50,7 +50,7 @@ def signup(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
+            messages.success(request, _(f'Account created for {username}!'))
             return redirect('pitv-home')
         else:
             print(form.errors.as_data())
@@ -69,13 +69,12 @@ def signin(request):
 
             user = authenticate(username=username, password=password)
             if user is not None:
-                print(user)
+                messages.success(request, _(f'Successfully logged in as {username}!'))
                 login(request, user)
                 return redirect('pitv-home')
             else:
                 print('User not found')
 
-            messages.success(request, f'Account logged in for {username}!')
             return redirect('pitv-home')
         else:
             print(form.errors.as_data())

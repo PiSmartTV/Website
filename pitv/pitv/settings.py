@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from os import environ, path
 
 from django.core.management.utils import get_random_secret_key
 
@@ -127,6 +126,8 @@ LOGIN_URL = 'pitv-login'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 try:
     from .local_settings import *
