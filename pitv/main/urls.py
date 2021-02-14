@@ -23,7 +23,7 @@ urlpatterns = [
     path('api/code/', api.code, name='pitv-api-code'),
 
     # Account
-    path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower())),
+    path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower()), name='pitv-account'),
     path('account/devices/', views.account_devices, name='pitv-devices'),
 
     # Favicon

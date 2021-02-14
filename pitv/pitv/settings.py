@@ -123,10 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_URL = 'pitv-login'
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 try:
     from .local_settings import *
 except ImportError:
-    print("Local settings not found!")
+    print('Local settings not found!')

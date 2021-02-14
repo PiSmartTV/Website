@@ -26,8 +26,8 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "username",
-                  "email", "password1", "password2"]
+        fields = ['first_name', 'last_name', 'username',
+                  'email', 'password1', 'password2']
 
 
 class CustomAuthenticationForm(AuthenticationForm):
@@ -40,4 +40,4 @@ class CustomAuthenticationForm(AuthenticationForm):
 
     class Meta:
         model = User
-        fields = ["username", "password"]
+        fields = ['username', 'password']

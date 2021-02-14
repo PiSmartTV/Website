@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-13 15:00+0100\n"
+"POT-Creation-Date: 2021-02-14 13:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Име"
 msgid "Last Name"
 msgstr "Презиме"
 
-#: main/forms.py:21 main/forms.py:39 main/templates/signup.html:61
+#: main/forms.py:21 main/forms.py:37 main/templates/signup.html:61
 msgid "Password"
 msgstr "Лозинка"
 
@@ -39,7 +39,7 @@ msgstr "Лозинка"
 msgid "Confirm password"
 msgstr "Потврда лозинке"
 
-#: main/forms.py:25 main/forms.py:41 main/templates/login.html:37
+#: main/forms.py:25 main/forms.py:39 main/templates/login.html:37
 #: main/templates/login.html:44 main/templates/signup.html:36
 msgid "Username"
 msgstr "Корисничко име"
@@ -56,8 +56,12 @@ msgstr "Преузми"
 msgid "Donate"
 msgstr "Донирај"
 
-#: main/templates/base.html:52 main/templates/login.html:52
-#: main/templates/signup.html:32 main/templates/signup.html:74 main/views.py:26
+#: main/templates/base.html:54
+msgid "Logout"
+msgstr "Излогуј се"
+
+#: main/templates/base.html:56 main/templates/login.html:52
+#: main/templates/signup.html:32 main/templates/signup.html:74 main/views.py:51
 msgid "Sign up"
 msgstr "Пријави се"
 
@@ -70,20 +74,32 @@ msgstr "Паметан ТВ за Распбери Пај са фокусом н�
 msgid "Beautiful UI"
 msgstr "Леп изглед"
 
-#: main/templates/home.html:18 main/templates/home.html:33
-#: main/templates/home.html:40
-msgid "TODO: Description I am going to write."
-msgstr "Урадити: Опис који ћу да напишем"
+#: main/templates/home.html:19
+msgid ""
+"Unique and intuitive interface is one of main goals of the project. Built-in "
+"theme support makes it easy to change the look and feel."
+msgstr ""
 
-#: main/templates/home.html:32
+#: main/templates/home.html:34
 msgid "User-friendly"
-msgstr "Лако за коришћење"
+msgstr ""
 
-#: main/templates/home.html:39
+#: main/templates/home.html:35
+msgid "Ease of use: everything is made so even grandma can use it!"
+msgstr ""
+
+#: main/templates/home.html:41
 msgid "Open source"
 msgstr "Отвореног кода"
 
-#: main/templates/login.html:33 main/templates/login.html:49 main/views.py:41
+#: main/templates/home.html:43
+msgid ""
+"Contributions are always welcome. You don&#39;t need to code to contribute, "
+"you can work on documentation, translation. You also help by reporting "
+"issues."
+msgstr ""
+
+#: main/templates/login.html:33 main/templates/login.html:49 main/views.py:77
 msgid "Log in"
 msgstr "Пријави се"
 
@@ -113,10 +129,14 @@ msgstr "Већ имате налог?"
 msgid "Sign in"
 msgstr "Пријави се"
 
-#: main/views.py:9
+#: main/views.py:12 main/views.py:26
+msgid "Devices"
+msgstr "Уређаји"
+
+#: main/views.py:16
 msgid "Home"
 msgstr "Почетна"
 
-#: main/views.py:12
+#: main/views.py:20
 msgid "Whoops"
 msgstr "Упс"

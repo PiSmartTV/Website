@@ -3,6 +3,39 @@
 {% load i18n %}
 {% block form %}
 
-Test
+
+    
+<h5 class="h5 mb-3">{% trans 'Device list' %}</h5>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <!-- TODO: Implement this -->
+            {% for device in devices %}
+            <li class="list-group-item">
+                <p class="align-middle d-inline">{{ device }}</p>
+                <button class="btn btn-primary btn-sm btn-disabled float-right" disabled>Delete</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<hr/>
+
+<form method="POST" class="form">
+    <h5 class="h5 mb-3">{% trans 'Register new device' %}</h5>
+
+    {% csrf_token %}
+
+    <div class="form-group row">
+        <label for="id_code" class="sr-only">{% trans 'Code'%}</label>
+        <div class="col-md-5">
+            <input type="text" id="id_code" class="form-control" name="code" placeholder="{% trans 'Code' %}" />
+        </div>
+    </div>
+    <input type="submit" id="id_submit" class="btn btn-primary" name="submit" value="{% trans 'Submit' %}" />
+</form>
+
 
 {% endblock %}
