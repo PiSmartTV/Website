@@ -10,8 +10,10 @@
                 {% for field in fields %}
                     {% if field == title %}
                         <a href="#" class="list-group-item list-group-item-action active">{{ field }}</a>
-                    {% else %}
-                        <a href="#" class="list-group-item list-group-item-action">{{ field }}</a>
+					{% else %}
+						{% with "pitv-"|add:field|lower as fieldurl %}
+						<a href="{% url fieldurl %}" class="list-group-item list-group-item-action">{{ field }}</a>
+						{% endwith%}
                     {% endif %}
                 {% endfor %}
             </div>

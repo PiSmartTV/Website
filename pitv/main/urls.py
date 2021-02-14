@@ -1,6 +1,5 @@
-from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path, include
+from django.urls import path
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from . import views
@@ -25,7 +24,10 @@ urlpatterns = [
     # Account
     path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower()), name='pitv-account'),
     path('account/devices/', views.account_devices, name='pitv-devices'),
+    path('account/logout/', RedirectView.as_view(url='pitv-logout')),
 
     # Favicon
     path('favicon.ico', favicon_view)
 ]
+
+

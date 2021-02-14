@@ -8,7 +8,7 @@ from .models import DeviceCode
 
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 
-ACCOUNT_FIELDS = [_('Devices')]
+ACCOUNT_FIELDS = [_('Devices'), _('Logout')]
 
 
 def home(request):
