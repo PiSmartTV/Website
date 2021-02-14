@@ -143,6 +143,10 @@ node_modules
 # Sass cache
 .sass-cache
 
+# Auto-generated stuff
 pitv/main/static/css/*
 pitv/main/static/js/*
 pitv/main/static/images/favicon.ico
+
+# Pipfile
+Pipfile.lock
