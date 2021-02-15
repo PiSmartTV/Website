@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load widget_tweaks %}
 <!doctype html>
 <html lang="en">
 
@@ -35,16 +36,40 @@
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
-                {{ form.username }}
+                {% if form.errors.username %}
+                    {% render_field form.username class+="is-invalid" %}
+                {% else %}
+                    {{ form.username }}
+                {% endif %}
+                {% for error in form.errors.username %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
 
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
-                {{ form.password }}
+                {% if form.errors.password %}
+                    {% render_field form.password class+="is-invalid" %}
+                {% else %}
+                    {{ form.password }}
+                {% endif %}
+                {% for error in form.errors.password %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
+
+        {% if form.non_field_errors %}
+        <div class="invalid-feedback d-block text-left">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Log in' %}</button>
         <p class="small text-muted">

@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load widget_tweaks %}
 <!doctype html>
 <html lang="en">
 
@@ -34,32 +35,77 @@
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.username.auto_id }}" class="sr-only">{% trans 'Username'%}</label>
-                {{ form.username }}
+                {% if form.errors.username %}
+                    {% render_field form.username class+="is-invalid" %}
+                {% else %}
+                    {{ form.username }}
+                {% endif %}
+                {% for error in form.errors.username %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
 
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.first_name.auto_id }}" class="sr-only">{% trans 'First Name'%}</label>
-                {{ form.first_name }}
+                {% if form.errors.first_name %}
+                    {% render_field form.first_name class+="is-invalid" %}
+                {% else %}
+                    {{ form.first_name }}
+                {% endif %}
+                {% for error in form.errors.first_name %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
             <div class="col-md">
                 <label for="{{ form.last_name.auto_id }}" class="sr-only">{% trans 'Last Name'%}</label>
-                {{ form.last_name }}
+                {% if form.errors.last_name %}
+                    {% render_field form.last_name class+="is-invalid" %}
+                {% else %}
+                    {{ form.last_name }}
+                {% endif %}
+                {% for error in form.errors.last_name %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
 
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.email.auto_id }}" class="sr-only">{% trans 'E-Mail Address'%}</label>
-                {{ form.email }}
+                {% if form.errors.email %}
+                    {% render_field form.email class+="is-invalid" %}
+                {% else %}
+                    {{ form.email }}
+                {% endif %}
+                {% for error in form.errors.email %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
 
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.password1.auto_id }}" class="sr-only">{% trans 'Password' %}</label>
-                {{ form.password1 }}
+                {% if form.errors.password1 %}
+                    {% render_field form.password1 class+="is-invalid" %}
+                {% else %}
+                    {{ form.password1 }}
+                {% endif %}
+                {% for error in form.errors.password1 %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
 
         </div>
@@ -67,9 +113,24 @@
         <div class="form-row my-2">
             <div class="col-md">
                 <label for="{{ form.password2.auto_id }}" class="sr-only">{% trans 'Confirm password' %}</label>
-                {{ form.password2 }}
+                {% if form.errors.password2 %}
+                    {% render_field form.password2 class+="is-invalid" %}
+                {% else %}
+                    {{ form.password2 }}
+                {% endif %}
+                {% for error in form.errors.password2 %}
+                <div class="invalid-feedback d-block">
+                    {{ error }}
+                </div>
+                {% endfor %}
             </div>
         </div>
+
+        {% if form.non_field_errors %}
+        <div class="invalid-feedback d-block text-left">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
         <p class="small text-muted">

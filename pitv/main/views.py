@@ -52,8 +52,6 @@ def signup(request):
             username = form.cleaned_data.get('username')
             messages.success(request, _(f'Account created for {username}!'))
             return redirect('pitv-home')
-        else:
-            print(form.errors.as_data())
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form, 'title': _('Sign up')})
@@ -72,12 +70,6 @@ def signin(request):
                 messages.success(request, _(f'Successfully logged in as {username}!'))
                 login(request, user)
                 return redirect('pitv-home')
-            else:
-                print('User not found')
-
-            return redirect('pitv-home')
-        else:
-            print(form.errors.as_data())
     else:
         form = CustomAuthenticationForm()
 
