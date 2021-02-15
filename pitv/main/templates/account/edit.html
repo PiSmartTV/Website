@@ -1,0 +1,67 @@
+{% extends 'account.html' %}
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% block form %}
+
+<form method="POST" class="form">
+    <h5 class="h5 mb-3">{% trans 'Change password' %}</h5>
+    {% csrf_token %}
+
+    <div class="form-group row">
+        <div class="col-md-5">
+            <label for="{{ form.old_password.auto_id }}" class="sr-only">{% trans 'Old password'%}</label>
+            {% if form.errors.old_password %}
+                {% render_field form.old_password class+="is-invalid" %}
+            {% else %}
+                {{ form.old_password }}
+            {% endif %}
+            {% for error in form.errors.old_password %}
+            <div class="invalid-feedback d-block">
+                {{ error }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-5">
+            <label for="{{ form.new_password1.auto_id }}" class="sr-only">{% trans 'New password'%}</label>
+            {% if form.errors.new_password1 %}
+                {% render_field form.new_password1 class+="is-invalid" %}
+            {% else %}
+                {{ form.new_password1 }}
+            {% endif %}
+            {% for error in form.errors.new_password1 %}
+            <div class="invalid-feedback d-block">
+                {{ error }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-5">
+            <label for="{{ form.new_password2.auto_id }}" class="sr-only">{% trans 'Confirm new password'%}</label>
+            {% if form.errors.new_password2 %}
+                {% render_field form.new_password2 class+="is-invalid" %}
+            {% else %}
+                {{ form.new_password2 }}
+            {% endif %}
+            {% for error in form.errors.new_password2 %}
+            <div class="invalid-feedback d-block">
+                {{ error }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if form.non_field_errors %}
+    <div class="invalid-feedback d-block text-left">
+        {{ form.non_field_errors }}
+    </div>
+    {% endif %}
+
+    <input type="submit" id="id_submit" class="btn btn-primary" name="submit" value="{% trans 'Submit' %}" />
+</form>
+
+
+{% endblock %}

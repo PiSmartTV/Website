@@ -6,9 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
 from .models import DeviceCode
 
-from .forms import CustomUserCreationForm, CustomAuthenticationForm
+from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm
 
-ACCOUNT_FIELDS = [_('Devices'), _('Logout')]
+ACCOUNT_FIELDS = [_('Devices'), _('Edit'), _('Logout')]
 
 
 def home(request):
@@ -18,6 +18,31 @@ def home(request):
 def not_available(request):
     return render(request, 'not-available.html', {'title': _('Whoops')})
 
+@login_required
+def account_edit(request):
+    if request.method == 'POST' :
+        form = CustomPasswordChangeForm(request.user, data=request.POST)
+        if form.is_valid():
+            user = request.user
+            user.set_password(form.cleaned_data.get('new_password2'))
+            user.save()
+
+            login(request, user=user)
+
+            messages.success(request, 'Password changed successfully!')
+            return redirect('pitv-edit')
+    else:
+        form = CustomPasswordChangeForm(request.user)
+    
+    return render(
+        request,
+        'account/edit.html',
+        {
+            'form': form,
+            'title': _('Edit'),
+            'fields': ACCOUNT_FIELDS
+        }
+    )
 
 @login_required
 def account_devices(request):
@@ -42,7 +67,7 @@ def account_devices(request):
                 device_code.approved_user = request.user
                 device_code.save()
 
-                messages.success(request, 'Successfully registered new device!')
+                messages.success(request, 'Successfully registered a new device!')
 
                 return redirect('pitv-devices')
 

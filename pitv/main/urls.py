@@ -24,6 +24,7 @@ urlpatterns = [
     # Account
     path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower()), name='pitv-account'),
     path('account/devices/', views.account_devices, name='pitv-devices'),
+    path('account/edit/', views.account_edit, name='pitv-edit'),
     path('account/logout/', RedirectView.as_view(url='pitv-logout')),
 
     # Favicon
