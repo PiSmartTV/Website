@@ -41,7 +41,10 @@ def account_devices(request):
             if device_code:
                 device_code.approved_user = request.user
                 device_code.save()
-                return HttpResponse("Success")
+
+                messages.success(request, 'Successfully registered new device!')
+
+                return redirect('pitv-devices')
 
 
 def signup(request):
