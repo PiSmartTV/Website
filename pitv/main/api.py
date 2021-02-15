@@ -1,6 +1,6 @@
 from django.contrib.auth import login
 from django.http import JsonResponse
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import DeviceCode, generate_code, get_expire_date
@@ -40,10 +40,12 @@ def code(request):
         if code:
             device_code = DeviceCode.objects.filter(code=code).first()
             if device_code:
-                login(request, user=device_code.approved_user)
-                device_code.delete()
-
-                return HttpResponse("Success")
+                if device_code.approved_user:
+                    login(request, user=device_code.approved_user)
+                    device_code.delete()
+                    return HttpResponse()
+        
+        return HttpResponseNotFound()
 
     else:
         return JsonResponse({'message': 'Not Implemented'}, status=501)
