@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
 from .models import DeviceCode
+from user_sessions.models import Session
 
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm
 
@@ -47,13 +48,16 @@ def account_edit(request):
 @login_required
 def account_devices(request):
     if request.method == 'GET':
+
+        devices = Session.objects.filter(user=request.user)
+
         return render(
             request,
             'account/devices.html',
             {
                 'title': _('Devices'),
                 'fields': ACCOUNT_FIELDS,
-                'devices': ['Not yet implemented']
+                'devices': devices
             }
         )
 

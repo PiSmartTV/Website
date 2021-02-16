@@ -3,3 +3,4 @@ Django
 pytz
 sqlparse
 django-widget-tweaks
+django-user-sessions

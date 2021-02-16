@@ -1,9 +1,8 @@
 {% extends 'account.html' %}
 {% load static %}
 {% load i18n %}
+{% load user_sessions %}
 {% block form %}
-
-
     
 <h5 class="h5 mb-3">{% trans 'Device list' %}</h5>
 <div class="row">
@@ -12,8 +11,8 @@
             <!-- TODO: Implement this -->
             {% for device in devices %}
             <li class="list-group-item">
-                <p class="align-middle d-inline">{{ device }}</p>
-                <button class="btn btn-primary btn-sm btn-disabled float-right" disabled>Delete</button>
+                <b class="align-middle d-inline">{{ device.user_agent|device }} - {{ device.ip }}</b>
+                <button class="btn btn-primary btn-sm btn-disabled float-right">Delete</button>
             </li>
             {% endfor %}
         </ul>

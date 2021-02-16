@@ -9,6 +9,7 @@ pytz = "*"
 sqlparse = "*"
 Django = "*"
 django-widget-tweaks = "*"
+django-user-sessions = "*"
 
 [dev-packages]
 
