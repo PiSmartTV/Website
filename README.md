@@ -35,6 +35,11 @@ Finally, run the server:
 ```
 ./run.sh
 ```
+## User data
+- User profile (email, name, username, hashed password)
+- Device codes, temporary for registering new devices (randomly generated code, ip address for spam prevention, expire date)
+- User session, used for access control and revoking (ip address of logged in device, user agent of the device). Without that, device list wouldn't work
+For user privacy, I will probably make ip address and user agent optional, but without option to revoke devices.
 
 ## Contributing
 Feel free to open issue or pull request.  
