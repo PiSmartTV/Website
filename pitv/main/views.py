@@ -1,12 +1,13 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
-from .models import DeviceCode
 from user_sessions.models import Session
+from user_sessions.views import SessionDeleteView
 
+from .models import DeviceCode
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm
 
 ACCOUNT_FIELDS = [_('Devices'), _('Edit'), _('Logout')]
@@ -106,3 +107,11 @@ def signin(request):
         form = CustomAuthenticationForm()
 
     return render(request, 'login.html', {'form': form, 'title': _('Log in')})
+
+
+class CustomSessionDeleteView(SessionDeleteView):
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
+    
+    def get_success_url(self):
+        return str(reverse_lazy('pitv-account'))

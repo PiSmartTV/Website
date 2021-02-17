@@ -11,8 +11,15 @@
             <!-- TODO: Implement this -->
             {% for device in devices %}
             <li class="list-group-item">
-                <b class="align-middle d-inline">{{ device.user_agent|device }} - {{ device.ip }}</b>
-                <button class="btn btn-primary btn-sm btn-disabled float-right">Delete</button>
+                {% if request.session.session_key == device.session_key %}
+                    <b class="align-middle d-inline">{{ device.user_agent|device }} - {{ device.ip }} ({% trans 'this device' %})</b>
+                {% else %}
+                    <b class="align-middle d-inline">{{ device.user_agent|device }} - {{ device.ip }}</b>
+                {% endif %}
+                <form method="post" action="{% url 'pitv-devices' %}{{ device.session_key }}/delete/" class="d-inline">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-primary btn-sm btn-disabled float-right" value="Revoke" />
+                </form>
             </li>
             {% endfor %}
         </ul>
