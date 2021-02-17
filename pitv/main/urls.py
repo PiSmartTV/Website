@@ -22,7 +22,10 @@ urlpatterns = [
     path('api/code/', api.code, name='pitv-api-code'),
 
     # Account
-    path('account/', RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower()), name='pitv-account'),
+    path('account/',
+         RedirectView.as_view(url=views.ACCOUNT_FIELDS[0].lower()), 
+         name='pitv-account'
+    ),
     path('account/devices/', views.account_devices, name='pitv-devices'),
     re_path(
         r'^account/devices/(?P<pk>\w+)/delete/$',
@@ -35,5 +38,3 @@ urlpatterns = [
     # Favicon
     path('favicon.ico', favicon_view)
 ]
-
-

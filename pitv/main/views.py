@@ -8,7 +8,8 @@ from user_sessions.models import Session
 from user_sessions.views import SessionDeleteView
 
 from .models import DeviceCode
-from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomPasswordChangeForm
+from .forms import CustomUserCreationForm, \
+    CustomAuthenticationForm, CustomPasswordChangeForm
 
 ACCOUNT_FIELDS = [_('Devices'), _('Edit'), _('Logout')]
 
@@ -20,9 +21,10 @@ def home(request):
 def not_available(request):
     return render(request, 'not-available.html', {'title': _('Whoops')})
 
+
 @login_required
 def account_edit(request):
-    if request.method == 'POST' :
+    if request.method == 'POST':
         form = CustomPasswordChangeForm(request.user, data=request.POST)
         if form.is_valid():
             user = request.user
@@ -35,7 +37,7 @@ def account_edit(request):
             return redirect('pitv-edit')
     else:
         form = CustomPasswordChangeForm(request.user)
-    
+
     return render(
         request,
         'account/edit.html',
@@ -45,6 +47,7 @@ def account_edit(request):
             'fields': ACCOUNT_FIELDS
         }
     )
+
 
 @login_required
 def account_devices(request):
@@ -72,7 +75,10 @@ def account_devices(request):
                 device_code.approved_user = request.user
                 device_code.save()
 
-                messages.success(request, 'Successfully registered a new device!')
+                messages.success(
+                    request,
+                    _('Successfully registered a new device!')
+                )
 
                 return redirect('pitv-devices')
 
@@ -100,7 +106,11 @@ def signin(request):
 
             user = authenticate(username=username, password=password)
             if user is not None:
-                messages.success(request, _(f'Successfully logged in as {username}!'))
+                messages.success(
+                    request,
+                    _(f'Successfully logged in as {username}!')
+                )
+
                 login(request, user)
                 return redirect('pitv-home')
     else:
@@ -112,6 +122,6 @@ def signin(request):
 class CustomSessionDeleteView(SessionDeleteView):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
-    
+
     def get_success_url(self):
         return str(reverse_lazy('pitv-account'))

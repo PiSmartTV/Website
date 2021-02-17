@@ -41,7 +41,7 @@ class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = User
         fields = ['username', 'password']
-    
+
 
 class CustomPasswordChangeForm(PasswordChangeForm):
     def __init__(self, *args, **kwargs):
@@ -52,7 +52,7 @@ class CustomPasswordChangeForm(PasswordChangeForm):
             {'class': 'form-control', 'placeholder': _('New password')})
         self.fields['new_password2'].widget.attrs.update(
             {'class': 'form-control', 'placeholder': _('Confirm new password')})
-    
+
     class Meta:
         model = User
         fields = ['old_password', 'new_password1', 'new_password2']
