@@ -9,6 +9,7 @@
     "@fontsource/dosis": "^4.2.1",
     "bootstrap": "^4.5.2",
     "bootstrap-icons": "^1.0.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "purgecss": "^4.0.2"
   }
 }
