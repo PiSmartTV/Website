@@ -6,9 +6,16 @@ $theme-colors:(
 );
 
 $font-family-sans-serif: "Dosis", sans-serif;
-// $font-family-sans-serif: "BloggerSansRegular", sans-serif;
 
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/@fontsource/dosis/scss/mixins.scss";
+
+@include fontFaceCustom(
+  $fontName: "Dosis",
+  $weight: 400,
+  $woffPath: "/static/fonts/dosis-all-400-normal.woff",
+  $woff2Path: "/static/fonts/dosis-latin-400-normal.woff2",
+);
 
 html{
   scroll-behavior: smooth;

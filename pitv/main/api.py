@@ -44,7 +44,7 @@ def code(request):
                     login(request, user=device_code.approved_user)
                     device_code.delete()
                     return HttpResponse()
-        
+
         return HttpResponseNotFound()
 
     else:

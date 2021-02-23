@@ -6,6 +6,7 @@
   "author": "Aleksa Ognjanovic",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@fontsource/dosis": "^4.2.1",
     "bootstrap": "^4.5.2",
     "bootstrap-icons": "^1.0.0",
     "jquery": "^3.5.1"
