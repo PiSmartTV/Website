@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Sass install
-        run: npm install -g sass
+        run: sudo npm install -g sass
       - name: Make css files
         run: ./make.sh
