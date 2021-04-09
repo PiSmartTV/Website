@@ -31,7 +31,7 @@ Second, create admin user:
 ```
 ./scripts/manage.sh createsuperuser
 ```
-Third, generate static files
+Third, generate static files:
 ```
 ./scripts/make.sh
 ./scripts/manage.sh collectstatic
@@ -39,6 +39,11 @@ Third, generate static files
 Finally, run the server:
 ```
 ./scripts/run.sh # or ./scripts/manage.sh runserver
+```
+Or setup everything with:
+```
+./scripts/setup.sh
+./scripts/run.sh
 ```
 
 ## User data
