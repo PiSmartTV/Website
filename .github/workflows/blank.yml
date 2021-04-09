@@ -15,7 +15,7 @@ jobs:
       - name: Sass install
         run: sudo npm install -g sass
       - name: Make css files
-        run: ./make.sh
+        run: ./scripts/make.sh
       - name: Artifact
         uses: actions/upload-artifact@v2
         with:
