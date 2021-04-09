@@ -28,7 +28,7 @@ SECRET_KEY = environ.get('DJANGO_SECRET') \
     else get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = environ.get('DJANGO_DEBUG') if environ.get('DJANGO_DEBUG') else False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'pitv.herokuapp.com']
 
