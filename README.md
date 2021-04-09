@@ -25,16 +25,22 @@ By default every time you start the server with `python pitv/manage.py runserver
 
 First, create database with:
 ```
-./manage.sh migrate
+./scripts/manage.sh migrate
 ```
 Second, create admin user:
 ```
-./manage.sh createsuperuser
+./scripts/manage.sh createsuperuser
+```
+Third, generate static files
+```
+./scripts/make.sh
+./scripts/manage.sh collectstatic
 ```
 Finally, run the server:
 ```
-./run.sh
+./scripts/run.sh # or ./scripts/manage.sh runserver
 ```
+
 ## User data
 - User profile (email, name, username, hashed password)
 - Device codes, temporary for registering new devices (randomly generated code, ip address for spam prevention, expire date)

@@ -149,5 +149,4 @@ pitv/main/static/js/*
 pitv/main/static/fonts/*
 pitv/main/static/images/favicon.ico
 
-# Pipfile
-Pipfile.lock
+pitv/staticfiles

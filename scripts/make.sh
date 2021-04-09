@@ -1,5 +1,5 @@
 #!/bin/sh
-DIR="$(dirname "$0")"
+DIR="$(dirname "$0")/../"
 
 CSS_DIR="${DIR}/pitv/main/static/css"
 JS_DIR="${DIR}/pitv/main/static/js"
