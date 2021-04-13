@@ -144,9 +144,9 @@ node_modules
 .sass-cache
 
 # Auto-generated stuff
-pitv/main/static/css/*
-pitv/main/static/js/*
-pitv/main/static/fonts/*
-pitv/main/static/images/favicon.ico
+# pitv/main/static/css/*
+# pitv/main/static/js/*
+# pitv/main/static/fonts/*
+# pitv/main/static/images/favicon.ico
 
 pitv/staticfiles
