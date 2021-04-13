@@ -1,1 +1,1 @@
-web: cd pitv && gunicorn pitv.wsgi 
+web: cd pitv && gunicorn pitv.wsgi
