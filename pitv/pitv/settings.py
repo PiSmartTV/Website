@@ -18,9 +18,7 @@ from django.core.management.utils import get_random_secret_key
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+HEROKU = environ.get('DJANGO_HEROKU') == 'True'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = environ.get('DJANGO_SECRET') \
@@ -28,7 +26,7 @@ SECRET_KEY = environ.get('DJANGO_SECRET') \
     else get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = environ.get('DJANGO_DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1', 'pitv.herokuapp.com']
 
@@ -84,12 +82,19 @@ WSGI_APPLICATION = 'pitv.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if HEROKU:
+    import dj_database_url
+
+    DATABASES = {
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation

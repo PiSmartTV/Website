@@ -21,11 +21,7 @@ def generate_code(length=8):
 
 
 class DeviceCode(models.Model):
-    id = models.IntegerField(
-        primary_key=True,
-        unique=True, null=False,
-        auto_created=True
-    )
+    id = models.AutoField(auto_created=True, primary_key=True)
     code = models.CharField(
         default=generate_code,
         max_length=8, unique=True,
