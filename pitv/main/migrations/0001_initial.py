@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='DeviceCode',
             fields=[
-                ('id', models.IntegerField(auto_created=True, primary_key=True, serialize=False, unique=True)),
+                ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('code', models.CharField(default=main.models.generate_code, max_length=8, unique=True)),
                 ('ip_address', models.GenericIPAddressField(unique=True)),
                 ('expire_date', models.DateTimeField(default=main.models.get_expire_date)),
